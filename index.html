@@ -223,6 +223,24 @@
     margin-bottom: 10px;
   }
   .filter-group { display: flex; flex-direction: column; gap: 6px; }
+  .filter-tools {
+    margin-top: 10px;
+    display: flex;
+    gap: 6px;
+  }
+  .filter-mini-btn {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--fg-dim);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 6px 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .filter-mini-btn:hover { color: var(--accent-light); border-color: var(--accent-dim); }
   .filter-chip {
     display: flex;
     align-items: center;
@@ -250,6 +268,7 @@
   .filter-chip[data-denom="historica"] { color: var(--historica); }
   .filter-chip[data-denom="sufismo"] { color: var(--sufismo); }
   .filter-chip[data-denom="visitadas"] { color: var(--accent-light); }
+  .filter-chip.is-empty { opacity: 0.45; }
 
   /* Stats */
   .stats {
@@ -502,6 +521,11 @@
     <div class="filters">
       <div class="filters-label">Tradiciones</div>
       <div class="filter-group" id="filters"></div>
+      <div class="filter-tools">
+        <button class="filter-mini-btn" id="filter-all">todas</button>
+        <button class="filter-mini-btn" id="filter-none">ninguna</button>
+        <button class="filter-mini-btn" id="filter-reset">reset</button>
+      </div>
     </div>
 
     <div class="stats">
@@ -804,6 +828,8 @@ function buildPopup(d) {
 
 // === FILTERS UI ===
 const filtersEl = document.getElementById('filters');
+const denomChips = {};
+const denomCountEls = {};
 Object.entries(DENOMS).forEach(([key, info]) => {
   const count = DATA.filter(d => d.denom === key).length;
   const chip = document.createElement('div');
@@ -820,6 +846,8 @@ Object.entries(DENOMS).forEach(([key, info]) => {
     chip.classList.toggle('active');
     render();
   });
+  denomChips[key] = chip;
+  denomCountEls[key] = chip.querySelector('.count');
   filtersEl.appendChild(chip);
 });
 
@@ -839,8 +867,31 @@ visitedFilterChip.addEventListener('click', () => {
 filtersEl.appendChild(visitedFilterChip);
 
 // === SEARCH ===
-document.getElementById('search').addEventListener('input', (e) => {
+const searchEl = document.getElementById('search');
+searchEl.addEventListener('input', (e) => {
   state.searchTerm = e.target.value.trim().toLowerCase();
+  render();
+});
+
+document.getElementById('filter-all').addEventListener('click', () => {
+  state.activeDenoms = new Set(Object.keys(DENOMS));
+  Object.values(denomChips).forEach(chip => chip.classList.add('active'));
+  render();
+});
+
+document.getElementById('filter-none').addEventListener('click', () => {
+  state.activeDenoms.clear();
+  Object.values(denomChips).forEach(chip => chip.classList.remove('active'));
+  render();
+});
+
+document.getElementById('filter-reset').addEventListener('click', () => {
+  state.activeDenoms = new Set(Object.keys(DENOMS));
+  state.showVisitedOnly = false;
+  state.searchTerm = '';
+  searchEl.value = '';
+  Object.values(denomChips).forEach(chip => chip.classList.add('active'));
+  visitedFilterChip.classList.remove('active');
   render();
 });
 
@@ -850,14 +901,17 @@ const visibleCountEl = document.getElementById('visible-count');
 const totalCountEl = document.getElementById('total-count');
 totalCountEl.textContent = DATA.length;
 
+function matchesSearch(d) {
+  if (!state.searchTerm) return true;
+  const hay = `${d.name} ${d.city} ${d.country}`.toLowerCase();
+  return hay.includes(state.searchTerm);
+}
+
 function filteredData() {
   return DATA.filter(d => {
     if (!state.activeDenoms.has(d.denom)) return false;
     if (state.showVisitedOnly && !isVisited(d._id)) return false;
-    if (state.searchTerm) {
-      const hay = `${d.name} ${d.city} ${d.country}`.toLowerCase();
-      if (!hay.includes(state.searchTerm)) return false;
-    }
+    if (!matchesSearch(d)) return false;
     return true;
   });
 }
@@ -867,6 +921,11 @@ function render() {
   visibleCountEl.textContent = visible.length;
   const visitedFilterCountEl = document.getElementById('visited-filter-count');
   if (visitedFilterCountEl) visitedFilterCountEl.textContent = visitedIds.size;
+  Object.keys(DENOMS).forEach(key => {
+    const count = DATA.filter(d => d.denom === key && (!state.showVisitedOnly || isVisited(d._id)) && matchesSearch(d)).length;
+    if (denomCountEls[key]) denomCountEls[key].textContent = count;
+    if (denomChips[key]) denomChips[key].classList.toggle('is-empty', count === 0);
+  });
 
   // Markers
   markers.forEach(m => {
