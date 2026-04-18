@@ -249,6 +249,7 @@
   .filter-chip[data-denom="ibadi"] { color: var(--ibadi); }
   .filter-chip[data-denom="historica"] { color: var(--historica); }
   .filter-chip[data-denom="sufismo"] { color: var(--sufismo); }
+  .filter-chip[data-denom="visitadas"] { color: var(--accent-light); }
 
   /* Stats */
   .stats {
@@ -418,6 +419,39 @@
     padding-bottom: 1px;
   }
   .popup-link:hover { color: var(--fg); border-color: var(--fg); }
+  .popup-actions {
+    margin-top: 10px;
+    display: flex;
+  }
+  .visit-btn {
+    width: 100%;
+    background: var(--bg);
+    color: var(--accent-light);
+    border: 1px solid var(--accent-dim);
+    padding: 8px 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .visit-btn:hover { border-color: var(--accent); color: var(--fg); }
+  .visit-btn.visited {
+    background: rgba(44, 183, 122, 0.12);
+    border-color: var(--accent-light);
+    color: var(--accent-light);
+  }
+
+  .mosque-marker.is-visited {
+    box-shadow: 0 0 0 1px currentColor, 0 0 0 4px rgba(44, 183, 122, 0.22), 0 2px 6px rgba(0,0,0,0.5);
+  }
+  .list-item.visited .list-item-name { color: var(--accent-light); }
+  .list-item-check {
+    color: var(--accent-light);
+    font-size: 11px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
 
   /* Legend overlay */
   .map-badge {
@@ -668,8 +702,44 @@ const DENOMS = {
 const state = {
   activeDenoms: new Set(Object.keys(DENOMS)),
   searchTerm: "",
-  selectedId: null
+  selectedId: null,
+  showVisitedOnly: false
 };
+
+const VISITED_KEY = 'mazo_mezquitas_visited_v1';
+const visitedIds = new Set(loadVisitedIds());
+
+function loadVisitedIds() {
+  try {
+    const raw = localStorage.getItem(VISITED_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(Number.isInteger);
+  } catch {
+    return [];
+  }
+}
+
+function saveVisitedIds() {
+  localStorage.setItem(VISITED_KEY, JSON.stringify([...visitedIds]));
+}
+
+function isVisited(id) {
+  return visitedIds.has(id);
+}
+
+function toggleVisited(id) {
+  if (visitedIds.has(id)) visitedIds.delete(id);
+  else visitedIds.add(id);
+  saveVisitedIds();
+  const marker = markers.find(m => m._data._id === id);
+  if (marker) {
+    marker.setIcon(createMarkerIcon(marker._data));
+    marker.setPopupContent(buildPopup(marker._data));
+  }
+  render();
+}
 
 // === MAP INIT ===
 const map = L.map('map', {
@@ -690,15 +760,21 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 
 // === MARKERS ===
 const markers = [];
-DATA.forEach((d, idx) => {
-  d._id = idx;
+
+function createMarkerIcon(d) {
   const color = DENOMS[d.denom].color;
-  const icon = L.divIcon({
+  const visitedClass = isVisited(d._id) ? ' is-visited' : '';
+  return L.divIcon({
     className: '',
-    html: `<div class="mosque-marker" style="background:${color};color:${color}"></div>`,
+    html: `<div class="mosque-marker${visitedClass}" style="background:${color};color:${color}"></div>`,
     iconSize: [14, 14],
     iconAnchor: [7, 7]
   });
+}
+
+DATA.forEach((d, idx) => {
+  d._id = idx;
+  const icon = createMarkerIcon(d);
   const marker = L.marker([d.lat, d.lng], { icon });
   marker.bindPopup(buildPopup(d), { maxWidth: 320, closeButton: true });
   marker._data = d;
@@ -707,6 +783,7 @@ DATA.forEach((d, idx) => {
 
 function buildPopup(d) {
   const denom = DENOMS[d.denom];
+  const visited = isVisited(d._id);
   return `
     <div class="popup-denom-bar" style="background:${denom.color}"></div>
     <div class="popup-inner">
@@ -717,6 +794,9 @@ function buildPopup(d) {
         ${d.year ? `<dt>Fundaci&oacute;n</dt><dd>${d.year}</dd>` : ''}
       </dl>
       ${d.note ? `<div class="popup-note">${d.note}</div>` : ''}
+      <div class="popup-actions">
+        <button class="visit-btn ${visited ? 'visited' : ''}" data-visit-id="${d._id}">${visited ? '&#10003; Visitada' : 'Marcar visitada'}</button>
+      </div>
       <a class="popup-link" href="https://www.google.com/maps/search/?api=1&query=${d.lat},${d.lng}" target="_blank" rel="noopener">&rarr; ver en mapa</a>
     </div>
   `;
@@ -743,6 +823,21 @@ Object.entries(DENOMS).forEach(([key, info]) => {
   filtersEl.appendChild(chip);
 });
 
+const visitedFilterChip = document.createElement('div');
+visitedFilterChip.className = 'filter-chip';
+visitedFilterChip.dataset.denom = 'visitadas';
+visitedFilterChip.innerHTML = `
+  <span class="dot"></span>
+  <span class="label">Visitadas</span>
+  <span class="count" id="visited-filter-count">${visitedIds.size}</span>
+`;
+visitedFilterChip.addEventListener('click', () => {
+  state.showVisitedOnly = !state.showVisitedOnly;
+  visitedFilterChip.classList.toggle('active', state.showVisitedOnly);
+  render();
+});
+filtersEl.appendChild(visitedFilterChip);
+
 // === SEARCH ===
 document.getElementById('search').addEventListener('input', (e) => {
   state.searchTerm = e.target.value.trim().toLowerCase();
@@ -758,6 +853,7 @@ totalCountEl.textContent = DATA.length;
 function filteredData() {
   return DATA.filter(d => {
     if (!state.activeDenoms.has(d.denom)) return false;
+    if (state.showVisitedOnly && !isVisited(d._id)) return false;
     if (state.searchTerm) {
       const hay = `${d.name} ${d.city} ${d.country}`.toLowerCase();
       if (!hay.includes(state.searchTerm)) return false;
@@ -769,6 +865,8 @@ function filteredData() {
 function render() {
   const visible = filteredData();
   visibleCountEl.textContent = visible.length;
+  const visitedFilterCountEl = document.getElementById('visited-filter-count');
+  if (visitedFilterCountEl) visitedFilterCountEl.textContent = visitedIds.size;
 
   // Markers
   markers.forEach(m => {
@@ -788,9 +886,10 @@ function render() {
     const denom = DENOMS[d.denom];
     const item = document.createElement('div');
     item.className = 'list-item';
+    if (isVisited(d._id)) item.classList.add('visited');
     if (state.selectedId === d._id) item.classList.add('active');
     item.innerHTML = `
-      <div class="list-item-name">${d.name}</div>
+      <div class="list-item-name">${d.name}${isVisited(d._id) ? '<span class="list-item-check">&#10003;</span>' : ''}</div>
       <div class="list-item-meta">
         <span class="denom-dot" style="background:${denom.color}"></span>
         <span>${d.city} &middot; ${d.country}</span>
@@ -810,6 +909,14 @@ function render() {
 }
 
 render();
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.visit-btn');
+  if (!btn) return;
+  const id = Number(btn.dataset.visitId);
+  if (!Number.isInteger(id)) return;
+  toggleVisited(id);
+});
 
 // === MOBILE SIDEBAR TOGGLE ===
 const sidebar = document.getElementById('sidebar');
