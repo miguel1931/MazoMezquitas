@@ -1158,5 +1158,1345 @@
         "denom":  "sunni",
         "year":  2018,
         "note":  "Una de las mezquitas mÃ¡s grandes de Europa Occidental."
+    },
+    {
+        "lat":  21.4225,
+        "denom":  "sunni",
+        "year":  638,
+        "name":  "Gran Mezquita de La Meca",
+        "lng":  39.8262,
+        "country":  "Arabia Saudí",
+        "city":  "La Meca",
+        "note":  "Masjid al-Haram, la mezquita más sagrada y grande del islam."
+    },
+    {
+        "lat":  24.4672,
+        "denom":  "sunni",
+        "year":  622,
+        "name":  "Mezquita del Profeta",
+        "lng":  39.6111,
+        "country":  "Arabia Saudí",
+        "city":  "Medina",
+        "note":  "Al-Masjid an-Nabawi, segundo lugar más sagrado del islam."
+    },
+    {
+        "lat":  31.7761,
+        "denom":  "sunni",
+        "year":  705,
+        "name":  "Mezquita Al-Aqsa",
+        "lng":  35.2358,
+        "country":  "Palestina",
+        "city":  "Jerusalén",
+        "note":  "Tercer lugar sagrado del islam."
+    },
+    {
+        "lat":  41.0054,
+        "denom":  "sunni",
+        "year":  1616,
+        "name":  "Mezquita Azul",
+        "lng":  28.9768,
+        "country":  "Turquía",
+        "city":  "Estambul",
+        "note":  "Sultanahmet, icono otomano de seis minaretes."
+    },
+    {
+        "lat":  41.0162,
+        "denom":  "sunni",
+        "year":  1558,
+        "name":  "Mezquita de Süleymaniye",
+        "lng":  28.9636,
+        "country":  "Turquía",
+        "city":  "Estambul",
+        "note":  "Obra maestra de Mimar Sinan."
+    },
+    {
+        "lat":  30.0322,
+        "denom":  "sunni",
+        "year":  1363,
+        "name":  "Mezquita del Sultán Hasan",
+        "lng":  31.2566,
+        "country":  "Egipto",
+        "city":  "El Cairo",
+        "note":  "Gran arquitectura mameluca."
+    },
+    {
+        "lat":  30.0287,
+        "denom":  "sunni",
+        "year":  879,
+        "name":  "Mezquita Ibn Tulun",
+        "lng":  31.2497,
+        "country":  "Egipto",
+        "city":  "El Cairo",
+        "note":  "Una de las más antiguas y mejor conservadas."
+    },
+    {
+        "lat":  24.4128,
+        "denom":  "sunni",
+        "year":  2007,
+        "name":  "Mezquita Sheikh Zayed",
+        "lng":  54.475,
+        "country":  "EAU",
+        "city":  "Abu Dabi",
+        "note":  "Una de las mezquitas más impresionantes del mundo contemporáneo."
+    },
+    {
+        "lat":  33.6084,
+        "denom":  "sunni",
+        "year":  1993,
+        "name":  "Mezquita de Hassan II",
+        "lng":  -7.6326,
+        "country":  "Marruecos",
+        "city":  "Casablanca",
+        "note":  "Minarete de más de 200 metros sobre el Atlántico."
+    },
+    {
+        "lat":  35.681,
+        "denom":  "sunni",
+        "year":  670,
+        "name":  "Gran Mezquita de Kairuán",
+        "lng":  10.103,
+        "country":  "Túnez",
+        "city":  "Kairuán",
+        "note":  "Mezquita histórica clave del norte de África."
+    },
+    {
+        "lat":  31.588,
+        "denom":  "sunni",
+        "year":  1673,
+        "name":  "Mezquita Badshahi",
+        "lng":  74.3107,
+        "country":  "Pakistán",
+        "city":  "Lahore",
+        "note":  "Gran mezquita mogola de arenisca roja."
+    },
+    {
+        "lat":  23.2599,
+        "denom":  "sunni",
+        "year":  1985,
+        "name":  "Taj-ul-Masajid",
+        "lng":  77.4026,
+        "country":  "India",
+        "city":  "Bhopal",
+        "note":  "Mezquita monumental del centro de India."
+    },
+    {
+        "lat":  3.1417,
+        "denom":  "sunni",
+        "year":  1965,
+        "name":  "Masjid Negara",
+        "lng":  101.6918,
+        "country":  "Malasia",
+        "city":  "Kuala Lumpur",
+        "note":  "Mezquita nacional de Malasia."
+    },
+    {
+        "lat":  2.9361,
+        "denom":  "sunni",
+        "year":  1999,
+        "name":  "Putra Mosque",
+        "lng":  101.6939,
+        "country":  "Malasia",
+        "city":  "Putrajaya",
+        "note":  "Mezquita rosa junto al lago de Putrajaya."
+    },
+    {
+        "lat":  34.2595,
+        "denom":  "sunni",
+        "year":  742,
+        "name":  "Mezquita de Xian",
+        "lng":  108.9449,
+        "country":  "China",
+        "city":  "Xian",
+        "note":  "Gran mezquita china de estilo sino-islámico."
+    },
+    {
+        "lat":  51.1242,
+        "denom":  "sunni",
+        "year":  2012,
+        "name":  "Hazrat Sultan",
+        "lng":  71.4022,
+        "country":  "Kazajistán",
+        "city":  "Astaná",
+        "note":  "Gran mezquita de la capital kazaja."
+    },
+    {
+        "lat":  13.9054,
+        "denom":  "sunni",
+        "year":  1907,
+        "name":  "Gran Mezquita de Djenné",
+        "lng":  -4.5553,
+        "country":  "Malí",
+        "city":  "Djenné",
+        "note":  "Mayor estructura de adobe del mundo."
+    },
+    {
+        "lat":  -34.5431,
+        "denom":  "sunni",
+        "year":  2000,
+        "name":  "Centro Islámico Rey Fahd",
+        "lng":  -58.4553,
+        "country":  "Argentina",
+        "city":  "Buenos Aires",
+        "note":  "Gran centro islámico de América Latina."
+    },
+    {
+        "name":  "Xiaotaoyuan Mosque",
+        "city":  "Huangpu",
+        "country":  "República Popular China",
+        "lat":  31.2207,
+        "lng":  121.48965,
+        "denom":  "sunni",
+        "year":  1917,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Arap",
+        "city":  "Estambul",
+        "country":  "Turquía",
+        "lat":  41.02444444,
+        "lng":  28.97083333,
+        "denom":  "sunni",
+        "year":  1325,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita del Imam Jomeini",
+        "city":  "distrito 3",
+        "country":  "Irán",
+        "lat":  32.654805555,
+        "lng":  51.677777777,
+        "denom":  "sunni",
+        "year":  1611,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Muhammad Alí",
+        "city":  "Gobernación de El Cairo",
+        "country":  "Egipto",
+        "lat":  30.028611111,
+        "lng":  31.259722222,
+        "denom":  "sunni",
+        "year":  1848,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Fort Mosque",
+        "city":  "Lezhë",
+        "country":  "Albania",
+        "lat":  41.7839,
+        "lng":  19.65,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Clock Mosque",
+        "city":  "Peqin",
+        "country":  "Albania",
+        "lat":  41.045954,
+        "lng":  19.750472,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Hysen Pasha Mosque",
+        "city":  "Berat",
+        "country":  "Albania",
+        "lat":  40.70616389,
+        "lng":  19.94033611,
+        "denom":  "sunni",
+        "year":  1670,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Kavajë Mosque",
+        "city":  "Kavajë",
+        "country":  "Albania",
+        "lat":  41.183987,
+        "lng":  19.56208,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Allajbegi\u0027s Mosque",
+        "city":  "Distrito de Dibër",
+        "country":  "Albania",
+        "lat":  41.57818972,
+        "lng":  20.46581806,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Naziresha Mosque",
+        "city":  "Elbasan",
+        "country":  "Albania",
+        "lat":  41.1052149,
+        "lng":  20.0864965,
+        "denom":  "sunni",
+        "year":  1599,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Naziresha Mosque",
+        "city":  "Elbasan municipality",
+        "country":  "Albania",
+        "lat":  41.1052149,
+        "lng":  20.0864965,
+        "denom":  "sunni",
+        "year":  1599,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Islamic Centre Hamburg",
+        "city":  "Hamburg-Nord",
+        "country":  "Alemania",
+        "lat":  53.574569444,
+        "lng":  10.008416666,
+        "denom":  "sunni",
+        "year":  1953,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Fatih Mosque",
+        "city":  "Amsterdam",
+        "country":  "Países Bajos",
+        "lat":  52.37306,
+        "lng":  4.87861,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Malmö Mosque",
+        "city":  "Malmö",
+        "country":  "Suecia",
+        "lat":  55.574722222,
+        "lng":  13.051944,
+        "denom":  "sunni",
+        "year":  1984,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Geneva Mosque",
+        "city":  "Ginebra",
+        "country":  "Suiza",
+        "lat":  46.2,
+        "lng":  6.15,
+        "denom":  "sunni",
+        "year":  1978,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Bibi Janum",
+        "city":  "Samarcanda",
+        "country":  "Uzbekistán",
+        "lat":  39.660555555,
+        "lng":  66.979722222,
+        "denom":  "sunni",
+        "year":  1404,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Amr ibn al-As",
+        "city":  "Gobernación de El Cairo",
+        "country":  "Egipto",
+        "lat":  30.010138888,
+        "lng":  31.233161111,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Amr ibn al-As",
+        "city":  "Guiza",
+        "country":  "Egipto",
+        "lat":  30.010138888,
+        "lng":  31.233161111,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Great Mosque of Kano",
+        "city":  "Kano",
+        "country":  "Nigeria",
+        "lat":  11.99486111,
+        "lng":  8.51763889,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Grande de Djenné",
+        "city":  "Djenné",
+        "country":  "Mali",
+        "lat":  13.905277777,
+        "lng":  -4.555555555,
+        "denom":  "sunni",
+        "year":  1906,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Malkocs Bej Mosque",
+        "city":  "Siklós",
+        "country":  "Hungría",
+        "lat":  45.851666666,
+        "lng":  18.300277777,
+        "denom":  "sunni",
+        "year":  1565,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mahmood Mosque",
+        "city":  "Zúrich",
+        "country":  "Suiza",
+        "lat":  47.3551,
+        "lng":  8.57494,
+        "denom":  "sunni",
+        "year":  1963,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Maryam",
+        "city":  "Illinois",
+        "country":  "Estados Unidos",
+        "lat":  41.7608,
+        "lng":  -87.5851,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mosquée de Saint-Pierre",
+        "city":  "Saint-Pierre",
+        "country":  "Francia",
+        "lat":  -21.3398,
+        "lng":  55.475,
+        "denom":  "sunni",
+        "year":  1975,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Arnaudija Mosque",
+        "city":  "Bania Luka",
+        "country":  "Bosnia y Herzegovina",
+        "lat":  44.769944,
+        "lng":  17.181778,
+        "denom":  "sunni",
+        "year":  1595,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Sheikh Zayed",
+        "city":  "Abu Dhabi",
+        "country":  "Emiratos Árabes Unidos",
+        "lat":  24.412,
+        "lng":  54.474,
+        "denom":  "sunni",
+        "year":  2007,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Masjid Al-Istiqamah",
+        "city":  "Serangoon Garden",
+        "country":  "Singapur",
+        "lat":  1.36922,
+        "lng":  103.876,
+        "denom":  "sunni",
+        "year":  1999,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Taipei Grand Mosque",
+        "city":  "distrito de Da\u0027an",
+        "country":  "República de China",
+        "lat":  25.027933333,
+        "lng":  121.534219444,
+        "denom":  "sunni",
+        "year":  1947,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Ash-Shahid mosque Khartoum",
+        "city":  "Jartum",
+        "country":  "Sudán",
+        "lat":  15.60683333,
+        "lng":  32.50333333,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "White Mosque",
+        "city":  "Berat",
+        "country":  "Albania",
+        "lat":  40.70857611,
+        "lng":  19.94493833,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Darul Barakaat Mosque",
+        "city":  "Birmingham",
+        "country":  "Reino Unido",
+        "lat":  52.4767,
+        "lng":  -1.86514,
+        "denom":  "sunni",
+        "year":  2004,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Gran Mezquita de Gaza",
+        "city":  "Gaza",
+        "country":  "Estado de Palestina",
+        "lat":  31.504,
+        "lng":  34.4644,
+        "denom":  "sunni",
+        "year":  401,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Fatih",
+        "city":  "Fatih",
+        "country":  "Turquía",
+        "lat":  41.019722,
+        "lng":  28.949722,
+        "denom":  "sunni",
+        "year":  1464,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Hacı Bayram Mosque",
+        "city":  "Ankara",
+        "country":  "Turquía",
+        "lat":  39.94444444,
+        "lng":  32.85777778,
+        "denom":  "sunni",
+        "year":  1428,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Imam Husayn",
+        "city":  "Kerbala",
+        "country":  "Irak",
+        "lat":  32.616388888,
+        "lng":  44.0325,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Capilla de la Ascensión",
+        "city":  "Jerusalén",
+        "country":  "Estado de Palestina",
+        "lat":  31.778956,
+        "lng":  35.244959,
+        "denom":  "sunni",
+        "year":  1150,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Al-Hakim",
+        "city":  "Gobernación de El Cairo",
+        "country":  "Egipto",
+        "lat":  30.054444444,
+        "lng":  31.263888888,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Crane Mosque",
+        "city":  "Guangling",
+        "country":  "República Popular China",
+        "lat":  32.391887,
+        "lng":  119.428098,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "DITIB-Merkez-Moschee",
+        "city":  "Renania del Norte-Westfalia",
+        "country":  "Alemania",
+        "lat":  51.5094,
+        "lng":  6.75389,
+        "denom":  "sunni",
+        "year":  2008,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "DITIB-Merkez-Moschee",
+        "city":  "Marxloh",
+        "country":  "Alemania",
+        "lat":  51.5094,
+        "lng":  6.75389,
+        "denom":  "sunni",
+        "year":  2008,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Baitul Futuh",
+        "city":  "Londres",
+        "country":  "Reino Unido",
+        "lat":  51.396111111,
+        "lng":  -0.198888888,
+        "denom":  "sunni",
+        "year":  2003,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Banya Bashi",
+        "city":  "Obórishte",
+        "country":  "Bulgaria",
+        "lat":  42.699511111,
+        "lng":  23.322575,
+        "denom":  "sunni",
+        "year":  1566,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Aziziye Mosque",
+        "city":  "Hackney",
+        "country":  "Reino Unido",
+        "lat":  51.5553,
+        "lng":  -0.075,
+        "denom":  "sunni",
+        "year":  1983,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Bab Berdieyinne Mezquita de",
+        "city":  "Mequinez",
+        "country":  "Marruecos",
+        "lat":  33.89972,
+        "lng":  -5.5675,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Et\u0027hem Bey",
+        "city":  "Tirana",
+        "country":  "Albania",
+        "lat":  41.327806,
+        "lng":  19.819361,
+        "denom":  "sunni",
+        "year":  1789,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Bayrakli Mosque",
+        "city":  "Sámokov",
+        "country":  "Bulgaria",
+        "lat":  42.33861111,
+        "lng":  23.55805556,
+        "denom":  "sunni",
+        "year":  1845,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Baitul Huda Mosque",
+        "city":  "Usingen",
+        "country":  "Alemania",
+        "lat":  50.3328,
+        "lng":  8.51944,
+        "denom":  "sunni",
+        "year":  2004,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Baitul Islam Mosque",
+        "city":  "Vaughan",
+        "country":  "Canadá",
+        "lat":  43.8649,
+        "lng":  -79.543,
+        "denom":  "sunni",
+        "year":  1992,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Baitus Salam, Sarajevo",
+        "city":  "Novi Grad",
+        "country":  "Bosnia y Herzegovina",
+        "lat":  43.85369444,
+        "lng":  18.36369444,
+        "denom":  "sunni",
+        "year":  2004,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Baitun Nur Mosque",
+        "city":  "Alberta",
+        "country":  "Canadá",
+        "lat":  51.1017,
+        "lng":  -113.972,
+        "denom":  "sunni",
+        "year":  2008,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Baitul Mukarram",
+        "city":  "Daca",
+        "country":  "Bangladés",
+        "lat":  23.72944444,
+        "lng":  90.41222222,
+        "denom":  "sunni",
+        "year":  1968,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Balaguša Mosque",
+        "city":  "City of Livno",
+        "country":  "Bosnia y Herzegovina",
+        "lat":  43.831508018,
+        "lng":  17.010796021,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Gjirokastër Mosque",
+        "city":  "Gjirokastra",
+        "country":  "Albania",
+        "lat":  40.07361111,
+        "lng":  20.13805556,
+        "denom":  "sunni",
+        "year":  1757,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Bazaar Mosque",
+        "city":  "Krujë",
+        "country":  "Albania",
+        "lat":  41.50966594,
+        "lng":  19.79452282,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Beida Mosque",
+        "city":  "Qinyang",
+        "country":  "República Popular China",
+        "lat":  35.095038888,
+        "lng":  112.936488888,
+        "denom":  "sunni",
+        "year":  1887,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Gran mezquita de Xi\u0027an",
+        "city":  "Xi\u0027an",
+        "country":  "República Popular China",
+        "lat":  34.263385616,
+        "lng":  108.936655788,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Baitus Sami",
+        "city":  "Hannover",
+        "country":  "Alemania",
+        "lat":  52.429633966,
+        "lng":  9.65812469,
+        "denom":  "sunni",
+        "year":  2008,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Noor ud Din Mosque",
+        "city":  "Darmstadt",
+        "country":  "Alemania",
+        "lat":  49.8853,
+        "lng":  8.62083,
+        "denom":  "sunni",
+        "year":  2003,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Central de Colonia",
+        "city":  "Colonia",
+        "country":  "Alemania",
+        "lat":  50.945555555,
+        "lng":  6.928333333,
+        "denom":  "sunni",
+        "year":  2017,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Central de Colonia",
+        "city":  "Ehrenfeld",
+        "country":  "Alemania",
+        "lat":  50.945555555,
+        "lng":  6.928333333,
+        "denom":  "sunni",
+        "year":  2017,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita del Imán Alí",
+        "city":  "Náyaf",
+        "country":  "Irak",
+        "lat":  31.996111111,
+        "lng":  44.314166666,
+        "denom":  "sunni",
+        "year":  977,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Sultan Al-Muayyad",
+        "city":  "Gobernación de El Cairo",
+        "country":  "Egipto",
+        "lat":  30.0431,
+        "lng":  31.2575,
+        "denom":  "sunni",
+        "year":  1421,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita del Sultán Omar Ali Saifuddin",
+        "city":  "Bandar Seri Begawan",
+        "country":  "Brunéi",
+        "lat":  4.889578,
+        "lng":  114.939136,
+        "denom":  "sunni",
+        "year":  1954,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "San Salvador en Chora",
+        "city":  "Fatih",
+        "country":  "Turquía",
+        "lat":  41.031111,
+        "lng":  28.939167,
+        "denom":  "sunni",
+        "year":  1001,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Beyazid",
+        "city":  "Fatih",
+        "country":  "Turquía",
+        "lat":  41.010277777,
+        "lng":  28.965277777,
+        "denom":  "sunni",
+        "year":  1506,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Kocatepe",
+        "city":  "Ankara",
+        "country":  "Turquía",
+        "lat":  39.916666666,
+        "lng":  32.860555555,
+        "denom":  "sunni",
+        "year":  1987,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Bibi-Heybat",
+        "city":  "Bakú",
+        "country":  "Azerbaiyán",
+        "lat":  40.308611111,
+        "lng":  49.820277777,
+        "denom":  "sunni",
+        "year":  1281,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Bibi-Heybat",
+        "city":  "Xanlar, Baku",
+        "country":  "Azerbaiyán",
+        "lat":  40.308611111,
+        "lng":  49.820277777,
+        "denom":  "sunni",
+        "year":  1281,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita del jeque Lotf Allah",
+        "city":  "distrito 3",
+        "country":  "Irán",
+        "lat":  32.657454,
+        "lng":  51.678535,
+        "denom":  "sunni",
+        "year":  1603,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Bilal-Moschee (Aachen)",
+        "city":  "Aachen-Mitte",
+        "country":  "Alemania",
+        "lat":  50.7797,
+        "lng":  6.07139,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Kiliç Ali Pasha",
+        "city":  "Estambul",
+        "country":  "Turquía",
+        "lat":  41.026373,
+        "lng":  28.980928,
+        "denom":  "sunni",
+        "year":  1578,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Kiliç Ali Pasha",
+        "city":  "Beyoğlu",
+        "country":  "Turquía",
+        "lat":  41.026373,
+        "lng":  28.980928,
+        "denom":  "sunni",
+        "year":  1578,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Birmingham Central Mosque",
+        "city":  "Highgate",
+        "country":  "Reino Unido",
+        "lat":  52.46477778,
+        "lng":  -1.89061111,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Vienna Islamic Centre",
+        "city":  "Viena",
+        "country":  "Austria",
+        "lat":  48.245,
+        "lng":  16.3975,
+        "denom":  "sunni",
+        "year":  1979,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Lead Mosque",
+        "city":  "Berat",
+        "country":  "Albania",
+        "lat":  40.70444444,
+        "lng":  19.95527778,
+        "denom":  "sunni",
+        "year":  1553,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Lead Mosque",
+        "city":  "Shkodër",
+        "country":  "Albania",
+        "lat":  42.04651944,
+        "lng":  19.49942222,
+        "denom":  "sunni",
+        "year":  1733,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Lead Mosque",
+        "city":  "municipalidad de Shkodër",
+        "country":  "Albania",
+        "lat":  42.04651944,
+        "lng":  19.49942222,
+        "denom":  "sunni",
+        "year":  1733,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Fazle Omar Mosque",
+        "city":  "Eimsbüttel",
+        "country":  "Alemania",
+        "lat":  53.58361111,
+        "lng":  9.94333333,
+        "denom":  "sunni",
+        "year":  1957,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Dar Al Salam Mosque",
+        "city":  "Budapest District XI",
+        "country":  "Hungría",
+        "lat":  47.4797,
+        "lng":  19.0514,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Nueva",
+        "city":  "Eminönü",
+        "country":  "Turquía",
+        "lat":  41.016875,
+        "lng":  28.972141,
+        "denom":  "sunni",
+        "year":  1597,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Ibn Tulun",
+        "city":  "Gobernación de El Cairo",
+        "country":  "Egipto",
+        "lat":  30.02875,
+        "lng":  31.249528,
+        "denom":  "sunni",
+        "year":  879,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Roja",
+        "city":  "Islamabad",
+        "country":  "Pakistán",
+        "lat":  33.712861111,
+        "lng":  73.086972222,
+        "denom":  "sunni",
+        "year":  1966,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Gran Mezquita de Susa",
+        "city":  "Susa",
+        "country":  "Túnez",
+        "lat":  35.8269,
+        "lng":  10.6397,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Great Mosque of Sofia",
+        "city":  "Sredets",
+        "country":  "Bulgaria",
+        "lat":  42.69633056,
+        "lng":  23.32456389,
+        "denom":  "sunni",
+        "year":  1494,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Dublin Mosque",
+        "city":  "Dublín",
+        "country":  "Irlanda",
+        "lat":  53.33138889,
+        "lng":  -6.2825,
+        "denom":  "sunni",
+        "year":  1983,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mosque of Pasha Qasim",
+        "city":  "Pécs",
+        "country":  "Hungría",
+        "lat":  46.07694444,
+        "lng":  18.22805556,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita del Rey Abdelaziz",
+        "city":  "Marbella",
+        "country":  "España",
+        "lat":  36.504325,
+        "lng":  -4.927622222,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Eyüp Sultan",
+        "city":  "Estambul",
+        "country":  "Turquía",
+        "lat":  41.047947222,
+        "lng":  28.933786111,
+        "denom":  "sunni",
+        "year":  1458,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Eyüp Sultan",
+        "city":  "Eyüp",
+        "country":  "Turquía",
+        "lat":  41.047947222,
+        "lng":  28.933786111,
+        "denom":  "sunni",
+        "year":  1458,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "King Fahd Mosque",
+        "city":  "Sarajevo",
+        "country":  "Bosnia y Herzegovina",
+        "lat":  43.83972222,
+        "lng":  18.34333333,
+        "denom":  "sunni",
+        "year":  2000,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "King Fahd Mosque",
+        "city":  "Novi Grad",
+        "country":  "Bosnia y Herzegovina",
+        "lat":  43.83972222,
+        "lng":  18.34333333,
+        "denom":  "sunni",
+        "year":  2000,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Chengdu Huangcheng Mosque",
+        "city":  "Distrito de Qingyang",
+        "country":  "República Popular China",
+        "lat":  30.65916667,
+        "lng":  104.06055556,
+        "denom":  "sunni",
+        "year":  1998,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita de Fuengirola",
+        "city":  "Fuengirola",
+        "country":  "España",
+        "lat":  36.53111111,
+        "lng":  -4.62694444,
+        "denom":  "sunni",
+        "year":  1994,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Huaisheng",
+        "city":  "Yuexiu",
+        "country":  "República Popular China",
+        "lat":  23.125383333,
+        "lng":  113.253586111,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Ertuğrul Gazi Mosque",
+        "city":  "Asjabad",
+        "country":  "Turkmenistán",
+        "lat":  37.933055555,
+        "lng":  58.398888888,
+        "denom":  "sunni",
+        "year":  1998,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Gyanvapi",
+        "city":  "Benarés",
+        "country":  "India",
+        "lat":  25.31125,
+        "lng":  83.01043,
+        "denom":  "sunni",
+        "year":  1664,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Gran Mezquita de Lyon",
+        "city":  "Lyon",
+        "country":  "Francia",
+        "lat":  45.736788,
+        "lng":  4.890241,
+        "denom":  "sunni",
+        "year":  1994,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Gran Mezquita de Lyon",
+        "city":  "Octavo Distrito de Lyon",
+        "country":  "Francia",
+        "lat":  45.736788,
+        "lng":  4.890241,
+        "denom":  "sunni",
+        "year":  1994,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Santa Sofía",
+        "city":  "Estambul",
+        "country":  "Turquía",
+        "lat":  41.008333333,
+        "lng":  28.98,
+        "denom":  "sunni",
+        "year":  532,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Santa Sofía",
+        "city":  "Provincia de Estambul",
+        "country":  "Turquía",
+        "lat":  41.008333333,
+        "lng":  28.98,
+        "denom":  "sunni",
+        "year":  532,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Santa Sofía",
+        "city":  "Fatih",
+        "country":  "Turquía",
+        "lat":  41.008333333,
+        "lng":  28.98,
+        "denom":  "sunni",
+        "year":  532,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Santa Sofía",
+        "city":  "Cankurtaran",
+        "country":  "Turquía",
+        "lat":  41.008333333,
+        "lng":  28.98,
+        "denom":  "sunni",
+        "year":  532,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Lakemba Mosque",
+        "city":  "Nueva Gales del Sur",
+        "country":  "Australia",
+        "lat":  -33.912589,
+        "lng":  151.074074,
+        "denom":  "sunni",
+        "year":  1977,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Hassan II",
+        "city":  "Achbarou",
+        "country":  "Marruecos",
+        "lat":  33.607341666,
+        "lng":  -7.632561111,
+        "denom":  "sunni",
+        "year":  1993,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "mezquita al Quds",
+        "city":  "Hamburgo",
+        "country":  "Alemania",
+        "lat":  53.55694444,
+        "lng":  10.01944444,
+        "denom":  "sunni",
+        "year":  1993,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mesih Mehmed Pasha Mosque",
+        "city":  "Provincia de Estambul",
+        "country":  "Turquía",
+        "lat":  41.021948,
+        "lng":  28.943427,
+        "denom":  "sunni",
+        "year":  1585,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mesih Mehmed Pasha Mosque",
+        "city":  "Fatih",
+        "country":  "Turquía",
+        "lat":  41.021948,
+        "lng":  28.943427,
+        "denom":  "sunni",
+        "year":  1585,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mesih Mehmed Pasha Mosque",
+        "city":  "Karagümrük",
+        "country":  "Turquía",
+        "lat":  41.021948,
+        "lng":  28.943427,
+        "denom":  "sunni",
+        "year":  1585,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Azul",
+        "city":  "Eminönü",
+        "country":  "Turquía",
+        "lat":  41.0053851,
+        "lng":  28.9768247,
+        "denom":  "sunni",
+        "year":  1609,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Málik ibn Anas",
+        "city":  "Cartago",
+        "country":  "Túnez",
+        "lat":  36.8594,
+        "lng":  10.329,
+        "denom":  "sunni",
+        "year":  2003,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "mezquita Qol Šärif",
+        "city":  "Kazán",
+        "country":  "Rusia",
+        "lat":  55.7983,
+        "lng":  49.1052,
+        "denom":  "sunni",
+        "year":  1996,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Bayezid I Mosque",
+        "city":  "Bursa",
+        "country":  "Turquía",
+        "lat":  40.1875,
+        "lng":  29.0825,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Abu\u0027l-Fida Mosque",
+        "city":  "Hama",
+        "country":  "Siria",
+        "lat":  35.13952778,
+        "lng":  36.74905278,
+        "denom":  "sunni",
+        "year":  1326,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Azul (Mazar-i-Sharif)",
+        "city":  "Mazari Sharif",
+        "country":  "Afganistán",
+        "lat":  36.708888888,
+        "lng":  67.110833333,
+        "denom":  "sunni",
+        "year":  1481,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Mezquita Al-Kadhimiya",
+        "city":  "Bagdad",
+        "country":  "Irak",
+        "lat":  33.37997,
+        "lng":  44.33796,
+        "denom":  "sunni",
+        "year":  null,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
+    },
+    {
+        "name":  "Iglesia de Santa Sofía (Ohrid)",
+        "city":  "Ohrid",
+        "country":  "Macedonia del Norte",
+        "lat":  41.111944444,
+        "lng":  20.793888888,
+        "denom":  "sunni",
+        "year":  1035,
+        "note":  "Registro incorporado desde Wikidata para ampliación del atlas."
     }
 ]
