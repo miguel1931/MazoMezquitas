@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MazoMezquitas · Atlas Islámico Mundial</title>
+<title>MazoMezquitas Â· Atlas IslÃ¡mico Mundial</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
       integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,7 +13,7 @@
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof L === 'undefined') {
-      console.warn('Leaflet no cargó desde cdnjs, intentando unpkg...');
+      console.warn('Leaflet no cargÃ³ desde cdnjs, intentando unpkg...');
       const css = document.createElement('link');
       css.rel = 'stylesheet';
       css.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
@@ -22,7 +22,7 @@
       s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
       s.onload = () => window.__initMazo && window.__initMazo();
       s.onerror = () => {
-        document.body.innerHTML = '<div style="padding:40px;font-family:monospace;color:#e8e3d5;background:#0c0e0f;height:100vh;">ERROR: No se pudo cargar Leaflet. Revisa tu conexión.</div>';
+        document.body.innerHTML = '<div style="padding:40px;font-family:monospace;color:#e8e3d5;background:#0c0e0f;height:100vh;">ERROR: No se pudo cargar Leaflet. Revisa tu conexiÃ³n.</div>';
       };
       document.head.appendChild(s);
     }
@@ -37,16 +37,16 @@
     --fg: #e3ddd0;
     --fg-dim: #a09888;
     --fg-faded: #5f5a50;
-    --accent: #1a8a5c;       /* verde esmeralda islámico */
+    --accent: #1a8a5c;       /* verde esmeralda islÃ¡mico */
     --accent-dim: #126b45;
     --accent-light: #2cb77a;
     --gold: #c9a227;         /* oro */
     --border: #242820;
     --sunni: #1a8a5c;        /* verde esmeralda */
     --shia: #8a2a2a;         /* granate */
-    --ibadi: #6b5b3a;        /* ámbar oscuro */
+    --ibadi: #6b5b3a;        /* Ã¡mbar oscuro */
     --historica: #8a7b6b;    /* gris piedra */
-    --sufismo: #5a4a8a;      /* púrpura */
+    --sufismo: #5a4a8a;      /* pÃºrpura */
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; overflow: hidden; }
@@ -195,7 +195,7 @@
     color: var(--accent-dim);
     font-family: 'IBM Plex Mono', monospace;
   }
-  .brand-meta::before { content: "☪ "; color: var(--accent-light); }
+  .brand-meta::before { content: "â˜ª "; color: var(--accent-light); }
 
   /* Search */
   .search-wrap { padding: 14px 20px; border-bottom: 1px solid var(--border); }
@@ -488,7 +488,7 @@
     text-transform: uppercase;
   }
   .map-badge .accent-dot::before {
-    content: "☪";
+    content: "â˜ª";
     color: var(--accent-light);
     margin-right: 6px;
   }
@@ -508,14 +508,14 @@
     <div class="brand">
       <div>
         <div class="brand-title">Mazo<span class="amp">&</span>Mezquitas</div>
-        <div class="brand-sub">Atlas Islámico Mundial</div>
-        <div class="brand-meta">forja nova · registro cartográfico</div>
+        <div class="brand-sub">Atlas IslÃ¡mico Mundial</div>
+        <div class="brand-meta">forja nova Â· registro cartogrÃ¡fico</div>
       </div>
       <button class="mobile-close" id="sidebar-close" aria-label="Cerrar panel">&times;</button>
     </div>
 
     <div class="search-wrap">
-      <input type="text" class="search-input" id="search" placeholder="buscar mezquita, ciudad, país…">
+      <input type="text" class="search-input" id="search" placeholder="buscar mezquita, ciudad, paÃ­sâ€¦">
     </div>
 
     <div class="filters">
@@ -536,7 +536,7 @@
     <div class="list" id="list"></div>
 
     <div class="foot">
-      <span>v0.1 · prototipo</span>
+      <span>v0.1 Â· prototipo</span>
       <span class="accent">foc i ferro</span>
     </div>
   </aside>
@@ -551,174 +551,29 @@
 </div>
 
 <script>
-window.__initMazo = function() {
+window.__initMazo = async function() {
   if (typeof L === 'undefined') {
     console.error('Leaflet sigue sin estar disponible');
     return;
   }
 
+  async function loadData() {
+    const response = await fetch('data.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error('No se pudo cargar data.json');
+    return response.json();
+  }
+
 // === DATASET ===
-// Mezquitas más significativas y grandes del mundo
+// Mezquitas mÃ¡s significativas y grandes del mundo
 // Tradiciones: sunni, shia, ibadi, historica, sufismo
-const DATA = [
-  // === ARABIA SAUDÍ — LAS DOS SAGRADAS ===
-  {name:"Masjid al-Haram", city:"La Meca", country:"Arabia Saudí", lat:21.4225, lng:39.8262, denom:"sunni", year:638, note:"La mezquita más grande y sagrada del islam. Alberga la Kaaba. Capacidad: 4 millones de fieles."},
-  {name:"Masjid an-Nabawi", city:"Medina", country:"Arabia Saudí", lat:24.4672, lng:39.6112, denom:"sunni", year:622, note:"Mezquita del Profeta. Segunda más sagrada. Tumba de Muhammad ﷺ."},
-  {name:"Masjid al-Qiblatayn", city:"Medina", country:"Arabia Saudí", lat:24.4808, lng:39.5753, denom:"sunni", year:623, note:"Mezquita de las Dos Qiblas. Donde se cambió la dirección de oración hacia La Meca."},
-  {name:"Masjid Quba", city:"Medina", country:"Arabia Saudí", lat:24.4398, lng:39.6166, denom:"sunni", year:622, note:"La primera mezquita construida en el islam."},
-
-  // === JERUSALÉN ===
-  {name:"Masjid al-Aqsa", city:"Jerusalén", country:"Palestina", lat:31.7761, lng:35.2358, denom:"sunni", year:705, note:"Tercera mezquita más sagrada del islam. Destino del Viaje Nocturno (Isra)."},
-  {name:"Cúpula de la Roca", city:"Jerusalén", country:"Palestina", lat:31.7781, lng:35.2354, denom:"historica", year:691, note:"Santuario omeya sobre la Roca Sagrada. Icono de Jerusalén. No es técnicamente una mezquita."},
-
-  // === TURQUÍA ===
-  {name:"Mezquita Azul (Sultanahmet)", city:"Estambul", country:"Turquía", lat:41.0054, lng:28.9768, denom:"sunni", year:1616, note:"Seis minaretes. Azulejos de Iznik. Frente a Santa Sofía."},
-  {name:"Mezquita de Süleymaniye", city:"Estambul", country:"Turquía", lat:41.0162, lng:28.9637, denom:"sunni", year:1558, note:"Obra maestra de Mimar Sinan. La mayor mezquita otomana de Estambul."},
-  {name:"Mezquita de Selimiye", city:"Edirne", country:"Turquía", lat:41.6780, lng:26.5591, denom:"sunni", year:1575, note:"La obra cumbre de Sinan. UNESCO. Cúpula que rivaliza con Santa Sofía."},
-  {name:"Mezquita de Fatih", city:"Estambul", country:"Turquía", lat:41.0197, lng:28.9500, denom:"sunni", year:1771, note:"Reconstruida tras terremoto. Primera gran mezquita imperial otomana."},
-  {name:"Mezquita Çamlıca", city:"Estambul", country:"Turquía", lat:41.0286, lng:29.0700, denom:"sunni", year:2019, note:"La mezquita más grande de Turquía. Capacidad: 63.000 fieles."},
-  {name:"Mezquita de Eyüp Sultan", city:"Estambul", country:"Turquía", lat:41.0481, lng:28.9342, denom:"sunni", year:1458, note:"Tumba de Abu Ayyub al-Ansari, compañero del Profeta."},
-  {name:"Gran Mezquita de Bursa", city:"Bursa", country:"Turquía", lat:40.1840, lng:29.0598, denom:"sunni", year:1399, note:"Ulu Cami. 20 cúpulas. Caligrafía monumental."},
-
-  // === EGIPTO ===
-  {name:"Mezquita de Al-Azhar", city:"El Cairo", country:"Egipto", lat:30.0458, lng:31.2628, denom:"sunni", year:972, note:"Sede de la universidad islámica más antigua del mundo (970 d.C.)."},
-  {name:"Mezquita de Muhammad Ali", city:"El Cairo", country:"Egipto", lat:30.0290, lng:31.2599, denom:"sunni", year:1848, note:"Ciudadela de Saladino. Estilo otomano. Icono del skyline cairota."},
-  {name:"Mezquita de Ibn Tulun", city:"El Cairo", country:"Egipto", lat:30.0286, lng:31.2495, denom:"sunni", year:879, note:"La mezquita más antigua del Cairo intacta. Minarete en espiral."},
-  {name:"Mezquita de Amr ibn al-As", city:"El Cairo", country:"Egipto", lat:30.0100, lng:31.2333, denom:"sunni", year:642, note:"La primera mezquita construida en África."},
-  {name:"Mezquita de al-Hakim", city:"El Cairo", country:"Egipto", lat:30.0558, lng:31.2622, denom:"shia", year:1013, note:"Fatimí. Importante para los ismaelíes. Restaurada por la comunidad Bohra."},
-  {name:"Mezquita del Sultán Hasán", city:"El Cairo", country:"Egipto", lat:30.0321, lng:31.2567, denom:"sunni", year:1363, note:"Mameluca. Una de las mayores mezquitas del mundo islámico medieval."},
-
-  // === IRÁN ===
-  {name:"Mezquita del Imán (Shah)", city:"Isfahán", country:"Irán", lat:32.6546, lng:51.6779, denom:"shia", year:1629, note:"Masjed-e Imam. Azulejos safávidas. Plaza Naqsh-e Yahán. UNESCO."},
-  {name:"Mezquita del Jeque Lotf-Alá", city:"Isfahán", country:"Irán", lat:32.6569, lng:51.6788, denom:"shia", year:1619, note:"Sin patio ni minaretes. Cúpula de proporciones perfectas."},
-  {name:"Mezquita de Nasir al-Mulk", city:"Shiraz", country:"Irán", lat:29.6084, lng:52.5486, denom:"shia", year:1888, note:"La 'Mezquita Rosa'. Vidrieras que crean arcoíris de luz al amanecer."},
-  {name:"Mezquita Jameh de Isfahán", city:"Isfahán", country:"Irán", lat:32.6648, lng:51.6858, denom:"shia", year:771, note:"1.300 años de arquitectura islámica superpuesta. UNESCO."},
-  {name:"Santuario del Imán Reza", city:"Mashhad", country:"Irán", lat:36.2888, lng:59.6168, denom:"shia", year:818, note:"El mayor complejo de mezquitas del mundo por superficie. 600.000 m²."},
-  {name:"Mezquita de Goharshad", city:"Mashhad", country:"Irán", lat:36.2886, lng:59.6160, denom:"shia", year:1418, note:"Timúrida. Dentro del complejo del Imán Reza. Caligrafía excepcional."},
-  {name:"Santuario de Fatima Masumeh", city:"Qom", country:"Irán", lat:34.6425, lng:50.8808, denom:"shia", year:816, note:"Segundo lugar más sagrado del chiismo en Irán. Cúpula dorada."},
-  {name:"Mezquita Vakil", city:"Shiraz", country:"Irán", lat:29.6106, lng:52.5447, denom:"shia", year:1773, note:"Zand. 48 columnas monolíticas talladas en espiral."},
-
-  // === IRAK ===
-  {name:"Santuario de Al-Kadhimiya", city:"Bagdad", country:"Irak", lat:33.3811, lng:44.3397, denom:"shia", year:799, note:"Tumbas del 7.º y 9.º imanes chiíes."},
-  {name:"Mezquita de Al-Askari", city:"Samarra", country:"Irak", lat:34.1997, lng:43.8686, denom:"shia", year:944, note:"Cúpula dorada (destruida en 2006, reconstruida). Tumbas del 10.º y 11.º imanes."},
-  {name:"Gran Mezquita de Samarra", city:"Samarra", country:"Irak", lat:34.2058, lng:43.8792, denom:"sunni", year:851, note:"Malwiya: minarete en espiral de 52 m. Fue la mayor mezquita del mundo."},
-  {name:"Santuario del Imán Husáin", city:"Kerbala", country:"Irak", lat:32.6167, lng:44.0244, denom:"shia", year:680, note:"Tumba de Husáin, nieto del Profeta. Epicentro de Ashura."},
-  {name:"Santuario del Imán Ali", city:"Nayaf", country:"Irak", lat:32.0056, lng:44.3147, denom:"shia", year:977, note:"Tumba del primer imán chií. Cúpula dorada. Tercer lugar más sagrado del chiismo."},
-  {name:"Gran Mezquita de Kufa", city:"Kufa", country:"Irak", lat:32.0289, lng:44.4031, denom:"shia", year:639, note:"Una de las primeras mezquitas del islam. Lugar del asesinato del Imán Ali."},
-
-  // === SIRIA ===
-  {name:"Mezquita de los Omeyas", city:"Damasco", country:"Siria", lat:33.5114, lng:36.3067, denom:"sunni", year:715, note:"Una de las mayores y más antiguas mezquitas. Mosaicos omeyas. Cabeza de Juan el Bautista."},
-  {name:"Gran Mezquita de Alepo", city:"Alepo", country:"Siria", lat:36.1989, lng:37.1567, denom:"sunni", year:715, note:"UNESCO. Minarete destruido en 2013 durante la guerra civil. En reconstrucción."},
-
-  // === MARRUECOS ===
-  {name:"Mezquita de Hasán II", city:"Casablanca", country:"Marruecos", lat:33.6086, lng:-7.6322, denom:"sunni", year:1993, note:"La segunda mezquita más grande de África. Minarete más alto del mundo (210 m). Sobre el Atlántico."},
-  {name:"Mezquita Koutoubia", city:"Marrakech", country:"Marruecos", lat:31.6236, lng:-7.9942, denom:"sunni", year:1199, note:"Almohade. Minarete modelo para la Giralda de Sevilla."},
-  {name:"Mezquita Qarawiyyin", city:"Fez", country:"Marruecos", lat:34.0644, lng:-4.9731, denom:"sunni", year:859, note:"Alberga la universidad más antigua del mundo en funcionamiento (fundada por Fatima al-Fihri)."},
-  {name:"Mezquita de la Torre Hasán", city:"Rabat", country:"Marruecos", lat:34.0241, lng:-6.8228, denom:"sunni", year:1199, note:"Almohade. Inacabada. Minarete de 44 m junto al Mausoleo de Muhammad V."},
-
-  // === TÚNEZ / ARGELIA / LIBIA ===
-  {name:"Gran Mezquita de Kairuán", city:"Kairuán", country:"Túnez", lat:35.6811, lng:10.1028, denom:"sunni", year:670, note:"La mezquita más antigua de África del Norte. Cuarta más sagrada del islam para el Magreb."},
-  {name:"Mezquita de la Zitouna", city:"Túnez", country:"Túnez", lat:36.7978, lng:10.1711, denom:"sunni", year:732, note:"Universidad medieval. Centro del saber malikí."},
-  {name:"Gran Mezquita de Argel", city:"Argel", country:"Argelia", lat:36.7472, lng:3.0714, denom:"sunni", year:2019, note:"Djamaa el Djazaïr. La mayor mezquita de África. Minarete más alto del mundo (265 m)."},
-  {name:"Gran Mezquita de Tlemcén", city:"Tlemcén", country:"Argelia", lat:34.8800, lng:-1.3200, denom:"sunni", year:1136, note:"Almorávide. Arcos de herradura. Obra maestra del Magreb central."},
-
-  // === EMIRATOS / GOLFO ===
-  {name:"Gran Mezquita del Jeque Zayed", city:"Abu Dabi", country:"EAU", lat:24.4128, lng:54.4750, denom:"sunni", year:2007, note:"82 cúpulas, 1.000 columnas, la alfombra tejida a mano más grande del mundo. Capacidad: 40.000."},
-  {name:"Mezquita de Jumeirah", city:"Dubái", country:"EAU", lat:25.2340, lng:55.2530, denom:"sunni", year:1979, note:"Fatimí moderno. Abierta a no musulmanes para visitas culturales."},
-  {name:"Gran Mezquita Estatal", city:"Kuwait", country:"Kuwait", lat:29.3760, lng:47.9731, denom:"sunni", year:1986, note:"La mayor mezquita de Kuwait. Cúpula central de 26 m de diámetro."},
-  {name:"Mezquita de Al-Fateh", city:"Manama", country:"Baréin", lat:26.2119, lng:50.5953, denom:"sunni", year:1988, note:"La mayor mezquita de Baréin. Cúpula de fibra de vidrio."},
-  {name:"Gran Mezquita del Sultán Qaboos", city:"Mascate", country:"Omán", lat:23.5860, lng:58.4059, denom:"ibadi", year:2001, note:"La mayor mezquita ibadí del mundo. Alfombra persa de 4.343 m². Lámpara Swarovski."},
-
-  // === PAKISTÁN ===
-  {name:"Mezquita Faisal", city:"Islamabad", country:"Pakistán", lat:33.7302, lng:73.0375, denom:"sunni", year:1986, note:"Diseño de Vedat Dalokay. Sin cúpula. Forma de tienda beduina. Capacidad: 300.000."},
-  {name:"Mezquita de Badshahi", city:"Lahore", country:"Pakistán", lat:31.5881, lng:74.3108, denom:"sunni", year:1673, note:"Mogol. Fue la mayor del mundo durante siglos. Arenisca roja y mármol."},
-  {name:"Mezquita de Wazir Khan", city:"Lahore", country:"Pakistán", lat:31.5831, lng:74.3233, denom:"sunni", year:1635, note:"Mogol. Los azulejos kashi kari más elaborados de Pakistán."},
-  {name:"Mezquita de Shah Jahan", city:"Thatta", country:"Pakistán", lat:24.7467, lng:67.9231, denom:"sunni", year:1647, note:"Mogol. 93 cúpulas, acústica única. UNESCO junto a la Necrópolis de Makli."},
-
-  // === INDIA ===
-  {name:"Jama Masjid", city:"Delhi", country:"India", lat:28.6507, lng:77.2334, denom:"sunni", year:1656, note:"La mayor mezquita de la India. Mogol. Tres puertas, dos minaretes, patio para 25.000 fieles."},
-  {name:"Mezquita Taj-ul-Masajid", city:"Bhopal", country:"India", lat:23.2637, lng:77.4086, denom:"sunni", year:1985, note:"Una de las mayores mezquitas de Asia. Construcción de más de un siglo."},
-  {name:"Mezquita Meca", city:"Hyderabad", country:"India", lat:17.3606, lng:78.4736, denom:"sunni", year:1694, note:"Qutb Shahi. Ladrillos con tierra de La Meca. Capacidad: 10.000."},
-  {name:"Mezquita Adina", city:"Pandua", country:"India", lat:25.1000, lng:88.1450, denom:"sunni", year:1374, note:"Fue la mayor mezquita del subcontinente. Sultanato de Bengala. Hoy en ruinas."},
-  {name:"Haji Ali Dargah", city:"Bombay", country:"India", lat:18.9827, lng:72.8089, denom:"sufismo", year:1431, note:"Santuario sufí sobre islote conectado por calzada sumergible con la marea."},
-
-  // === BANGLADESH ===
-  {name:"Mezquita Nacional Baitul Mukarram", city:"Daca", country:"Bangladés", lat:23.7283, lng:90.4108, denom:"sunni", year:1968, note:"Mezquita nacional. Diseño inspirado en la Kaaba. Capacidad: 40.000."},
-  {name:"Mezquita de las Sesenta Cúpulas", city:"Bagerhat", country:"Bangladés", lat:22.6750, lng:89.7431, denom:"sunni", year:1459, note:"Shat Gombuj. UNESCO. 77 cúpulas en realidad. Sultanato de Bengala."},
-
-  // === INDONESIA ===
-  {name:"Mezquita de Istiqlal", city:"Yakarta", country:"Indonesia", lat:-6.1700, lng:106.8317, denom:"sunni", year:1978, note:"La mayor mezquita del Sudeste Asiático. Capacidad: 200.000. Frente a la Catedral."},
-  {name:"Gran Mezquita de Demak", city:"Demak", country:"Indonesia", lat:-6.8936, lng:110.6381, denom:"sunni", year:1479, note:"La mezquita más antigua de Java. Fundada por los Wali Songo."},
-  {name:"Mezquita de Menara Kudus", city:"Kudus", country:"Indonesia", lat:-6.7317, lng:110.8408, denom:"sunni", year:1549, note:"Minarete de estilo hindú-javanés. Sincretismo arquitectónico único."},
-
-  // === MALASIA / BRUNÉI ===
-  {name:"Mezquita Nacional Masjid Negara", city:"Kuala Lumpur", country:"Malasia", lat:3.1419, lng:101.6919, denom:"sunni", year:1965, note:"Techo en forma de paraguas de 18 puntas (estados de Malasia). Capacidad: 15.000."},
-  {name:"Mezquita de Putrajaya", city:"Putrajaya", country:"Malasia", lat:2.9361, lng:101.6939, denom:"sunni", year:1999, note:"Putra Mosque. Granito rosa. Sobre el lago artificial."},
-  {name:"Mezquita del Sultán Omar Ali Saifuddien", city:"Bandar Seri Begawan", country:"Brunéi", lat:4.9417, lng:114.9461, denom:"sunni", year:1958, note:"Laguna artificial. Cúpula dorada. Considerada una de las más bellas del Pacífico."},
-  {name:"Mezquita Jame' Asr Hassanil Bolkiah", city:"Bandar Seri Begawan", country:"Brunéi", lat:4.9800, lng:114.9350, denom:"sunni", year:1994, note:"La mayor mezquita de Brunéi. 29 cúpulas doradas (por el 29.º sultán)."},
-
-  // === CHINA ===
-  {name:"Gran Mezquita de Xian", city:"Xian", country:"China", lat:34.2597, lng:108.9458, denom:"sunni", year:742, note:"La mayor mezquita de China. Estilo arquitectónico chino. Fundada en la dinastía Tang."},
-  {name:"Mezquita Id Kah", city:"Kashgar", country:"China", lat:39.4736, lng:75.9836, denom:"sunni", year:1442, note:"La mayor mezquita de China por capacidad. Centro de la cultura uigur."},
-  {name:"Mezquita Niujie", city:"Pekín", country:"China", lat:39.8886, lng:116.3594, denom:"sunni", year:996, note:"La mezquita más antigua de Pekín. Arquitectura china con decoración islámica."},
-
-  // === ASIA CENTRAL ===
-  {name:"Mezquita de Bibi-Khanym", city:"Samarcanda", country:"Uzbekistán", lat:39.6611, lng:66.9775, denom:"sunni", year:1404, note:"Timúrida. Fue la mayor mezquita del mundo islámico. Restaurada."},
-  {name:"Mezquita Hazrat Sultan", city:"Astaná", country:"Kazajistán", lat:51.1242, lng:71.4022, denom:"sunni", year:2012, note:"La mayor mezquita de Asia Central. Capacidad: 10.000. Estilo otomano-kazajo."},
-  {name:"Mezquita de Turkmenistán", city:"Asjabad", country:"Turkmenistán", lat:37.8978, lng:58.3272, denom:"sunni", year:2004, note:"Mezquita Kipchak. La mayor de Turkmenistán. Tumba de Saparmurat Niyazov."},
-  {name:"Mezquita Minor", city:"Taskent", country:"Uzbekistán", lat:41.3189, lng:69.2806, denom:"sunni", year:2014, note:"Mármol blanco. La 'mezquita blanca' de Taskent."},
-
-  // === AFRICA SUBSAHARIANA ===
-  {name:"Gran Mezquita de Djenné", city:"Djenné", country:"Malí", lat:13.9054, lng:-4.5553, denom:"sunni", year:1907, note:"La mayor estructura de adobe del mundo. UNESCO. Se replastea anualmente."},
-  {name:"Gran Mezquita de Touba", city:"Touba", country:"Senegal", lat:14.8528, lng:-15.8831, denom:"sufismo", year:1963, note:"Centro de la cofradía Mouride. Peregrinación del Gran Magal."},
-  {name:"Mezquita Nacional de Abuja", city:"Abuja", country:"Nigeria", lat:9.0603, lng:7.4906, denom:"sunni", year:1984, note:"Cúpula dorada y cuatro minaretes. Símbolo de la capital nigeriana."},
-  {name:"Gran Mezquita de Larabanga", city:"Larabanga", country:"Ghana", lat:9.2144, lng:-1.8597, denom:"sunni", year:1421, note:"Estilo sudanés. Una de las mezquitas más antiguas de África Occidental."},
-
-  // === EUROPA ===
-  {name:"Mezquita-Catedral de Córdoba", city:"Córdoba", country:"España", lat:37.8790, lng:-4.7794, denom:"historica", year:785, note:"Obra maestra omeya. 856 columnas. Convertida en catedral en 1236 pero conserva la sala de oración."},
-  {name:"Mezquita de la Alhambra", city:"Granada", country:"España", lat:37.1767, lng:-3.5878, denom:"historica", year:1354, note:"Dentro del palacio nazarí. Oratorio real conectado al Mexuar."},
-  {name:"Mezquita Cristo de la Luz", city:"Toledo", country:"España", lat:39.8624, lng:-4.0271, denom:"historica", year:999, note:"Bab al-Mardum. Pequeña joya califal. Nueve bóvedas, todas distintas."},
-  {name:"Mezquita de París", city:"París", country:"Francia", lat:48.8430, lng:2.3556, denom:"sunni", year:1926, note:"La mayor mezquita de Francia. Estilo hispano-morisco. Homenaje a los soldados musulmanes de la I Guerra Mundial."},
-  {name:"Mezquita Central de Londres", city:"Londres", country:"Reino Unido", lat:51.5313, lng:-0.1764, denom:"sunni", year:1977, note:"Regent's Park. Diseño de Frederick Gibberd. Cúpula dorada."},
-  {name:"Mezquita de Roma", city:"Roma", country:"Italia", lat:41.9397, lng:12.4900, denom:"sunni", year:1995, note:"La mayor mezquita de Europa Occidental por superficie. Diseño de Paolo Portoghesi."},
-  {name:"Mezquita del Sultán Bayaceto", city:"Edirne", country:"Turquía", lat:41.6775, lng:26.5567, denom:"sunni", year:1488, note:"Complejo imperial otomano con hospital psiquiátrico pionero."},
-  {name:"Mezquita de Sarajevo", city:"Sarajevo", country:"Bosnia", lat:43.8597, lng:18.4306, denom:"sunni", year:1531, note:"Mezquita de Gazi Husrev-beg. La mayor mezquita histórica de los Balcanes."},
-  {name:"Mezquita Bajrakli", city:"Belgrado", country:"Serbia", lat:44.8178, lng:20.4567, denom:"sunni", year:1575, note:"La única mezquita superviviente de las 273 otomanas de Belgrado."},
-  {name:"Corazón de Chechenia", city:"Grozni", country:"Rusia", lat:43.3178, lng:45.6947, denom:"sunni", year:2008, note:"La mayor mezquita de Rusia. Estilo otomano. Capacidad: 10.000."},
-  {name:"Mezquita Kul Sharif", city:"Kazán", country:"Rusia", lat:55.7989, lng:49.1050, denom:"sunni", year:2005, note:"Reconstruida en el Kremlin de Kazán. Símbolo del islam tártaro."},
-
-  // === AMÉRICAS ===
-  {name:"Centro Islámico de América", city:"Dearborn", country:"EE.UU.", lat:42.3019, lng:-83.2411, denom:"shia", year:2005, note:"La mayor mezquita de Norteamérica. Comunidad libanesa-americana."},
-  {name:"Mezquita de Manhattan", city:"Nueva York", country:"EE.UU.", lat:40.7569, lng:-73.9730, denom:"sunni", year:1991, note:"Islamic Cultural Center. Primera mezquita diseñada como tal en Manhattan."},
-  {name:"Mezquita Mother", city:"Chicago", country:"EE.UU.", lat:41.8517, lng:-87.6317, denom:"sunni", year:1957, note:"Masjid Al-Faatir. Una de las primeras mezquitas afroamericanas."},
-  {name:"Mesquita Brasil", city:"São Paulo", country:"Brasil", lat:-23.5439, lng:-46.6433, denom:"sunni", year:1960, note:"La primera y mayor mezquita de América del Sur."},
-  {name:"Centro Cultural Islámico Rey Fahd", city:"Buenos Aires", country:"Argentina", lat:-34.5431, lng:-58.4553, denom:"sunni", year:2000, note:"La mayor mezquita de América Latina. Financiada por Arabia Saudí."},
-
-  // === OCEANÍA ===
-  {name:"Mezquita Auburn Gallipoli", city:"Sídney", country:"Australia", lat:-33.8556, lng:151.0294, denom:"sunni", year:1999, note:"Estilo otomano. Homenaje a las tropas otomanas y ANZAC de Gallipoli."},
-  {name:"Mezquita de Ponsonby", city:"Auckland", country:"Nueva Zelanda", lat:-36.8517, lng:174.7567, denom:"sunni", year:1979, note:"Al Masjid Al Jamie. La mayor mezquita de Nueva Zelanda."},
-
-  // === AFRICA ORIENTAL ===
-  {name:"Mezquita de Al-Najashi", city:"Negash", country:"Etiopía", lat:13.8900, lng:39.5100, denom:"sunni", year:615, note:"La primera mezquita de África. Refugio de los primeros musulmanes que huyeron de La Meca."},
-  {name:"Mezquita de Fakr ad-Din", city:"Mogadiscio", country:"Somalia", lat:2.0358, lng:45.3372, denom:"sunni", year:1269, note:"Una de las mezquitas más antiguas de África Oriental."},
-
-  // === SUBCONTINENTE ===
-  {name:"Mezquita de Faisal", city:"Islamabad", country:"Pakistán", lat:33.7302, lng:73.0375, denom:"sunni", year:1986, note:"Donación del rey Faisal de Arabia Saudí. Arquitectura contemporánea turca."},
-
-  // === MÁS HISTÓRICAS ===
-  {name:"Mezquita de Tombuctú (Djinguereber)", city:"Tombuctú", country:"Malí", lat:16.7736, lng:-3.0092, denom:"sunni", year:1327, note:"Adobe y madera. Centro del saber islámico medieval. UNESCO."},
-  {name:"Mezquita de Sankore", city:"Tombuctú", country:"Malí", lat:16.7756, lng:-3.0058, denom:"sunni", year:1325, note:"Universidad islámica medieval con 25.000 estudiantes en su apogeo."},
-  {name:"Mezquita de Agadez", city:"Agadez", country:"Níger", lat:16.9736, lng:7.9911, denom:"sunni", year:1515, note:"Minarete de adobe de 27 m. La mezquita más alta del Sahel. UNESCO."},
-  {name:"Mezquita Al-Aqmar", city:"El Cairo", country:"Egipto", lat:30.0508, lng:31.2617, denom:"shia", year:1125, note:"Fatimí. Primera fachada decorada del Cairo islámico."},
-  {name:"Mezquita de Sinan Pasha", city:"El Cairo", country:"Egipto", lat:30.0447, lng:31.2300, denom:"sunni", year:1571, note:"Otomana a orillas del Nilo. Cúpula alzada. Bulaq."}
-];
+const DATA = await loadData();
 
 // === TRADICIONES ===
 const DENOMS = {
-  sunni:     { label: "Suní",      color: "#1a8a5c" },
-  shia:      { label: "Chií",      color: "#8a2a2a" },
-  ibadi:     { label: "Ibadí",     color: "#6b5b3a" },
-  historica: { label: "Histórica", color: "#8a7b6b" },
+  sunni:     { label: "SunÃ­",      color: "#1a8a5c" },
+  shia:      { label: "ChiÃ­",      color: "#8a2a2a" },
+  ibadi:     { label: "IbadÃ­",     color: "#6b5b3a" },
+  historica: { label: "HistÃ³rica", color: "#8a7b6b" },
   sufismo:   { label: "Sufismo",   color: "#5a4a8a" }
 };
 
@@ -796,14 +651,25 @@ function createMarkerIcon(d) {
   });
 }
 
-DATA.forEach((d, idx) => {
-  d._id = idx;
-  const icon = createMarkerIcon(d);
-  const marker = L.marker([d.lat, d.lng], { icon });
-  marker.bindPopup(buildPopup(d), { maxWidth: 320, closeButton: true });
-  marker._data = d;
-  markers.push(marker);
-});
+async function buildMarkersInBatches() {
+  const batchSize = 250;
+  for (let start = 0; start < DATA.length; start += batchSize) {
+    const end = Math.min(start + batchSize, DATA.length);
+    for (let idx = start; idx < end; idx++) {
+      const d = DATA[idx];
+      d._id = idx;
+      const icon = createMarkerIcon(d);
+      const marker = L.marker([d.lat, d.lng], { icon });
+      marker.bindPopup(buildPopup(d), { maxWidth: 320, closeButton: true });
+      marker._data = d;
+      markers.push(marker);
+    }
+    // Yield to the browser between batches to keep UI responsive with large datasets.
+    if (end < DATA.length) await new Promise(resolve => setTimeout(resolve, 0));
+  }
+}
+
+await buildMarkersInBatches();
 
 function buildPopup(d) {
   const denom = DENOMS[d.denom];
@@ -1009,3 +875,4 @@ if (document.readyState === 'loading') {
 </script>
 </body>
 </html>
+
